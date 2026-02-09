@@ -17,7 +17,7 @@ return function(opts)
     .new(opts, {
       prompt_title = opts.prompt_titles[opts.state.current],
       finder = finders.from_options(opts),
-      sorter = conf.generic_sorter(opts),
+      sorter = opts.sorter or conf.generic_sorter(opts),
       previewer = conf.grep_previewer(opts),
       attach_mappings = function(_, map)
         action_set.select:replace(actions.insert(opts))
